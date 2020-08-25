@@ -55,3 +55,5 @@ page = PAGES[selection]
 
 with st.spinner(f"Loading {selection} ..."):
     page.main()
+
+

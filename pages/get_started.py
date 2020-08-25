@@ -3,6 +3,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import time
 
 
 def main():
@@ -89,3 +90,53 @@ def main():
         columns=['lat', 'lon'])
 
         st.map(map_data)
+    
+
+    st.title("Adding interactivity with widgets")
+    st.subheader("Checkbox")
+    with st.echo():
+        if st.checkbox('Show dataframe'):
+            chart_data = pd.DataFrame(
+                np.random.randn(20, 3),
+                columns=['a', 'b', 'c'])
+
+            st.write(chart_data)
+    
+    st.subheader("Selectbox")
+    with st.echo():
+        option = st.selectbox(
+            'Which number do you like best?',
+            df['first column'])
+
+        st.write('You selected: ', option)
+
+    st.subheader("Putting widgets in a sidebar")
+
+    # with st.echo():
+    #     option_side = st.sidebar.selectbox(
+    #         'Which number do you like best?',
+    #         [1,2,3,4])
+
+    #     st.write('You selected: ', option_side)
+    
+    st.title("Recording a screencast")
+    st.markdown("![screencast](https://docs.streamlit.io/en/stable/_images/screenshare.gif)") 
+
+    st.title("Showing Progress")
+    st.write("When adding long running computations to an app, you can use st.progress() to display status in real time.")
+    if st.button("show progress"):
+        with st.echo():
+            st.write('Starting a long computation...')
+            # Add a placeholder
+            latest_iteration = st.empty()
+            bar = st.progress(0)
+
+            for i in range(100):
+            # Update the progress bar with each iteration.
+                latest_iteration.text(f'Iteration {i+1}')
+                bar.progress(i + 1)
+                time.sleep(0.1)
+
+            st.write('...and now we\'re done!')
+
+
