@@ -32,14 +32,14 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import time
-from pages import get_started, widgets
+from pages import get_started, widgets, commands
 
 
 
 PAGES = {
     "Getting Started": get_started,
     "Widgets": widgets,
-    "Commands": None,
+    "Commands": commands,
 }
 
 st.sidebar.title("Navigation")
