@@ -32,21 +32,16 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import time
-from pages import overview, get_started
+from pages import get_started, widgets
 
 
-st.title("Streamlit Playbook")
 
 PAGES = {
-    "Overview": overview,
     "Getting Started": get_started,
-    "Widgets": None,
+    "Widgets": widgets,
     "Commands": None,
-    "References": None,
 }
 
-
-"""Main function of the App"""
 st.sidebar.title("Navigation")
 selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 
@@ -55,5 +50,3 @@ page = PAGES[selection]
 
 with st.spinner(f"Loading {selection} ..."):
     page.main()
-
-

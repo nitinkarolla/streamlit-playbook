@@ -7,24 +7,32 @@ import time
 
 
 def main():
-    #### Getting Started ####   
-    st.title("Getting Started")
+    st.title("Streamlit Playbook")
+
+    st.write("Streamlit is an opens-source Python library that makes it easy to build beautiful custom web-apps for machine learning and data science.")
     st.video("https://s3-us-west-2.amazonaws.com/assets.streamlit.io/videos/udacity_car_demo-2.mp4",format = "mp4")
 
-    st.write("One can install streamlit using PIP and test out the hello world app by running the command 'streamlit hello' from your \
-        terminal")
+    st.write("This playbook is a lighter and interactive version of streamlit documentation for first time users of streamlit. Playbook showcases various features of the streamlit library.")
+    #### Getting Started ####   
+    st.title("Getting Started")
 
-    st.text("$ pip install streamlit")
-    st.text("$ streamlit hello")
 
+    st.write("One can install streamlit using PIP and test out the hello world app by running the command `streamlit hello` from your \
+        terminal on successful installation of streamlit.")
+
+    st.subheader("Installation")
+    st.write("`pip install streamlit`")
+
+    st.subheader("Importing")
     st.write("To start building an app create a python file and import \
         and start coding. It is recommended to code and view the changes \
         parallely together.")
 
-    st.text("$ import streamlit as st")
+    st.write("`import streamlit as st`")
 
+    st.subheader("Running an app")
     st.write("Working with streamlit is simple")
-    st.text("$ streamlit run your_script.py [-- script args]")
+    st.write("`streamlit run your_script.py [-- script args]`")
     st.write("As soon as you run the script as shown above, a local Streamlit \
         server will spin up and your app will open in a new tab on your default \
         web browser.")
@@ -33,7 +41,7 @@ def main():
         try it out, and so on until you’re happy with the results.")
 
     st.write("Also you can pass a URL to streamlit run")
-    st.text("$ streamlit run https://raw.githubusercontent.com/streamlit/demo-uber-nyc-pickups/master/app.py")
+    st.write("`streamlit run https://raw.githubusercontent.com/streamlit/demo-uber-nyc-pickups/master/app.py`")
 
     #### Text and Data Section ####    
     st.title("Adding Text and Data")
@@ -112,12 +120,13 @@ def main():
 
     st.subheader("Putting widgets in a sidebar")
 
-    # with st.echo():
-    #     option_side = st.sidebar.selectbox(
-    #         'Which number do you like best?',
-    #         [1,2,3,4])
+    st.write("For cleaner look, you can move the widgets  to the sidebar. Most of the elements can be put in a sidebar using the syntax like `st.sidebar.[element_name]()`")
+    st.code('''option_side = st.sidebar.selectbox(
+        'Which number do you like best?',
+        [1,2,3,4])
 
-    #     st.write('You selected: ', option_side)
+st.write('You selected: ', option_side)''',language= "python")
+    
     
     st.title("Recording a screencast")
     st.markdown("![screencast](https://docs.streamlit.io/en/stable/_images/screenshare.gif)") 
@@ -138,5 +147,6 @@ def main():
                 time.sleep(0.1)
 
             st.write('...and now we\'re done!')
+            st.balloons()
 
 
