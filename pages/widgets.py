@@ -105,9 +105,9 @@ def main():
     st.header("Date Input")
     with st.echo():
         # Note that you can mention the minimum/maximum selectable date
-        dat_inp = st.date_input("When did you start working at S&P Global?", datetime.date(2020, 1, 22))
+        dat_inp = st.date_input("What is your date of birth?", datetime.date(2020, 1, 22))
 
-        st.write("Congratulations on joining the best company in the world from ", dat_inp)
+        st.write("So it's ", dat_inp)
 
     # Eleventh widget - Time Input
     st.header("Time Input")
