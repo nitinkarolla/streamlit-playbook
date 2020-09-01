@@ -49,7 +49,7 @@ def main():
     st.header("Code")
     with st.echo():
         st.code('''def hello():
-    print("Hello, I am Nitin")''', language="python")
+    print("Hello! World!!!")''', language="python")
 
     # Dataframe
     st.header("Dataframe")

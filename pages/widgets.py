@@ -87,9 +87,9 @@ def main():
     st.header("Number Input")
     with st.echo():
         # Note that you can mention the min value/max value/step count/display format
-        num_input = st.number_input("How many states have you travelled to in the United States?", 1, 50, 1)
+        num_input = st.number_input("How many countries have you travelled?", 1, 50, 1)
 
-        st.write("You have travelled to ", num_input, " states in the United States. That is very cool.")
+        st.write("You have travelled to ", num_input, " countries. That is very cool.")
 
     # Ninth widget - Text Area
     st.header("Text Area")
